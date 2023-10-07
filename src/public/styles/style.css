@@ -1,0 +1,49 @@
+
+.center {
+	margin: auto;
+	border: 0px solid green;
+}
+
+.right {
+	float: right;
+	border: 0px solid purple;
+	padding-right: 10px;
+}
+
+.bottom {
+	position: absolute !important;
+	top: 50% !important;
+}
+
+.navbar {
+	border-width: 2px !important;
+}
+
+.nav-link {
+  padding: 0rem 0.2rem 0 !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+.navbar .me-auto {
+	margin-right: 0px !important;
+	width: 100% !important;
+}
+
+.navbar {
+  padding: 0rem 0.2rem 0 !important;
+  padding-bottom: 3px !important;
+  padding-top: 3px !important;
+  display: flex !important;
+  position: relative !important;
+  
+}
+
+.nav-link > button {
+  padding: 0rem 0.2rem 0 !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+  color: rgb(225,245,255) !important;
+}

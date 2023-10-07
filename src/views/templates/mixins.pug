@@ -1,0 +1,79 @@
+
+// NOTE: Requires script(src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js")
+// https://confetti.js.org/more.html
+mixin confetti(particleCount, spread, ox, oy, disableForReducedMotion)
+    script.
+      setTimeout(() => {
+        confetti({
+          particleCount: #{particleCount}, 
+          spread: #{spread}, 
+          origin: {"x": #{ox}, "y": #{oy}}, 
+          disableForReducedMotion: #{disableForReducedMotion}
+        });
+      }, 500);
+
+//- Navbar mixins
+mixin fixed-top-nav(name, id)
+    nav.navbar.navbar-expand-lg.fixed-top.bg-primary(data-bs-theme="dark")
+        div.container-fluid
+            a.navbar-brand(href="#")
+            button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarColor03", aria-controls="navbarColor03", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            div.collapse.navbar-collapse(id="navbarColor03")
+                ul.navbar-nav.me-auto
+                    block
+ 
+mixin nav(name, id)
+    
+    nav.navbar.navbar-expand-lg.bg-light(data-bs-theme="light")
+        div.container-fluid
+            a.navbar-brand(href="#")
+            button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarColor03", aria-controls="navbarColor03", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            div.collapse.navbar-collapse(id="navbarColor03")
+                ul.navbar-nav.me-auto
+                    block
+ 
+mixin nav_item(href)
+    li(class="nav-item"): a.nav-link( href=href )
+        button.btn.btn-secondary
+            block
+
+mixin nav_item_active(href)
+    li(class="nav-item active"): a.nav-link( href=href )
+        span.visually-hidden 
+            
+        block
+ 
+mixin nav_dropdown_divider()
+    div.dropdown-divider
+
+mixin nav_dropdown(href)
+    li(class="nav-item dropdown")
+        button.btn.btn-secondary
+            a.nav-link.dropdown-toggle( href=href, data-bs-toggle="dropdown", role="button", aria-expanded="false", aria-haspopup="ture", style="color: #ffffff;" )= attributes.label
+                span.caret
+            div.dropdown-menu( role="menu" )
+            
+                block
+ 
+mixin nav_dropdown_item(href)
+    a.dropdown-item(href=href)
+        block
+
+mixin nav_divider
+    li.divider
+ 
+mixin nav_header
+    li.dropdown-header
+        block
+
+        
+mixin bootswatch(theme, version)
+    link(href="https://cdn.jsdelivr.net/npm/bootswatch@" + version + "/dist/" + theme + "/bootstrap.min.css", rel="stylesheet")
+
+mixin image(src, style)
+    img(src=src, style=style)
+
+mixin blank-space(height)
+    div(style="width: 100%; height: 5px; border: " + height + " solid black; opacity: 0;")
